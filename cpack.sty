@@ -1,0 +1,75 @@
+% no indent, but a bit of space between paragraphs
+\usepackage{parskip}
+
+% widen the page
+\usepackage[text={7.25in,8.75in},twocolumn]{geometry}
+
+\usepackage{setspace}
+
+% setup source listings
+\usepackage{listings}
+\usepackage{textcomp}
+\lstset{language=IDL,upquote=true,showstringspaces=false}
+\lstset{numbers=none, numberstyle=\tiny,numbersep=7pt,xleftmargin=-5pt}
+\lstset{basicstyle=\ttfamily,keywordstyle={}}
+\lstset{aboveskip=0em,belowskip=0.5em}
+
+\lstnewenvironment{idlcode}
+  {\singlespacing\lstset{language=IDL}}
+  {}
+
+% set up links
+\usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\urlstyle{same}
+
+% get regular fonts
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Scale=MatchLowercase}
+\setmonofont{Monaco}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Times New Roman}
+
+
+\usepackage[runin]{abstract}
+
+\usepackage[labelfont=bf,justification=raggedright,labelsep=endash,singlelinecheck=false]{caption}
+
+% setup header/footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+ 
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhead{}
+\fancyhead[LE,RO]{\thepage} 
+\fancyhead[C]{\em CPack variables}  % title
+\fancyhead[LO,RE]{\leftmark}  % section
+
+\fancyfoot{}
+\fancyfoot[RE,LO]{}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{}
+
+
+% fix up the headings
+\setcounter{secnumdepth}{2}
+\usepackage[calcwidth]{titlesec}
+\titleformat{\section}[hang]{}{}{0pt}{\Large\thesection.~\raggedright}[]
+\titleformat{\subsection}[hang]{}{}{0pt}{\large\thesubsection~\raggedright}[]
+
+% change quote left margin
+\renewenvironment{quote}{%
+  \list{}{%
+    \leftmargin0.5cm   % this is the adjusting screw
+    \rightmargin\leftmargin
+  }
+  \item\relax
+}
+{\endlist}
+
+
