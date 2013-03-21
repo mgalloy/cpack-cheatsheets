@@ -1,7 +1,7 @@
-CPack cheatsheets
-=================
+CPack cheat sheets
+==================
 
-Here are a list of downloadable PDFs:
+Here are a list of downloadable cheat sheets as PDFs:
 
 * `CPack variables`_
 
